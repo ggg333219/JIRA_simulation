@@ -1,0 +1,13 @@
+node_modules
+build
+dist
+.git
+.cache
+.next
+out
+public
+coverage
+.husky
+.env
+.env.local
+*.log

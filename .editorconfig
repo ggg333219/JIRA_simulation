@@ -1,0 +1,30 @@
+# EditorConfig 配置文件，用于统一编辑器设置
+# https://editorconfig.org
+
+root = true
+
+# 所有文件
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript/JSX 文件
+[*.{js,jsx}]
+indent_style = space
+indent_size = 2
+
+# JSON 文件
+[*.json]
+indent_style = space
+indent_size = 2
+
+# CSS 文件
+[*.css]
+indent_style = space
+indent_size = 2
+
+# Markdown 文件
+[*.md]
+trim_trailing_whitespace = false
