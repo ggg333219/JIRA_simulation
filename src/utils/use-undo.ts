@@ -1,28 +1,26 @@
-import { useCallback, useState } from "react"
+import { useCallback, useReducer, useState } from "react"
 
-export const useUndo=<T>(initialPresent:T)=>{
-    const [past,setPast]=useState<T[]>([])
-    const [present,setPresent]=useState(initialPresent)
-    const [future,setFuture]=useState<T[]>([])
+const UNDO='UNDO'
+const REDO='REDO'
+const SET='SET'
+const RESET='RESET'
 
-    const [state,setState]=useState<{
-        past:T[],
-        present:T,
-        future:T[]
-    }>({
-        past:[],
-        present:initialPresent,
-        future:[]
-    })
 
-    const canUndo=state.past.length!==0
-    const canRedo=state.future.length!==0
+type UndoState<T> = {
+    past: T[],
+    present: T,
+    future: T[]
+}
 
-    const undo=useCallback(()=>{
-        setState(curState=>{
-            const {past,present,future}=curState
-            
+type Action<T>={newPresent?:T,type:typeof UNDO|typeof REDO|typeof SET|typeof RESET}
 
+const undoReducedr=<T>(state:UndoState<T>,action:Action<T>)=>{
+    const {past,present,future}=state
+    const {type,newPresent}=action
+    
+    switch(action.type){
+        case   UNDO:{
+            if(past.length==0)return state;
             const previous=past[past.length-1]
             const newPast=past.slice(0,past.length-1)
 
@@ -31,16 +29,9 @@ export const useUndo=<T>(initialPresent:T)=>{
                 present:previous,
                 future:[present,...future]
             }
-        
-        })
-
-        
-    },[]);
-
-    const redo=useCallback(()=>{
-       setState(curState=>{
-            const {past,present,future}=curState
-            if(future.length==0)return curState
+         }
+         case  REDO:{
+            if(future.length==0)return state
 
             const next=future[0]
             const newFuture=future.slice(1)
@@ -50,36 +41,45 @@ export const useUndo=<T>(initialPresent:T)=>{
                 present:next,
                 future:newFuture
             }
-       })
-        
-    },[])
-
-    const set=useCallback((newPresent:T)=>{
-        setState(curState=>{
-            const {past,present,future}=curState
-        if(newPresent==present)return
-         return{
+         }
+         case SET:{
+            if(newPresent==present)return
+            return{
                  past:[...past,present],
                 present:newPresent,
                 future:[]
             }
-        })
-     } ,[])
-
-    const reset=useCallback((newPresent:T)=>{
-        setState(curState=>{
-            const {past,present,future}=curState
-        
-        return{
+         }
+         case RESET:{
+            return{
             past:[],
             present:newPresent,
             future:[]
         }
-        })
-       
-     } ,[])
-    return[
-        state,
-        {set,redo,reset,undo,canRedo,canUndo}
-    ]
+         }
+   
+
 }
+        return state
+}
+
+
+
+export const useUndo=<T>(initialPresent:T)=>{
+    const [state,dispatch]=useReducer(undoReducedr,{
+        past: [],
+    present: initialPresent,
+    future: [],
+    }as UndoState<T>)
+
+   const undo=useCallback(()=>dispatch({type:UNDO}),[])
+   const redo=useCallback(()=>dispatch({type:REDO}),[])
+   const set=useCallback((newPresent:T)=>dispatch({type:SET,newPresent}),[])
+   const reset=useCallback((newPresent:T)=>dispatch({type:RESET,newPresent}),[])
+
+
+   return [state,{set,reset,undo,redo}]as const;
+   
+  
+}
+

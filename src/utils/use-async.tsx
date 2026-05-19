@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useReducer, useRef, useState } from "react"
 
 const useMountedRef = () => {
     const mountedRef = useRef(false);
@@ -29,13 +29,24 @@ const defaultConfig = {
     throwOwnError: false,
 }
 
-export const useAsync = <D,>(initialState?: State<D>, initialConfig?: Partial<typeof defaultConfig>) => {
-    const config = { ...defaultConfig, ...initialConfig }
-    const [state, setState] = useState({
-        ...defaultInitialState,
-        ...initialState,
-    })
+const useSafeDispatch=<T,>(dispatch:(...args:T[])=>void)=>{
     const mountedRef=useMountedRef()
+    return useCallback((...args:T[])=>(mountedRef.current?dispatch(...args):void 0),[dispatch,mountedRef])
+}
+
+export const useAsync = <D,>(
+    initialState?: State<D>,
+    initialConfig?: Partial<typeof defaultConfig>) => {
+    const config = { ...defaultConfig, ...initialConfig }
+    const [state, dispatch] = useReducer(
+        (state: State<D>, action: Partial<State<D>>) => ({ ...state, ...action }),
+        {
+            ...defaultInitialState,
+            ...initialState,
+        } as State<D>
+    );
+    const mountedRef = useMountedRef();
+    const safeDispatch=useSafeDispatch(dispatch);
     const [retry,setRetry]=useState(()=>()=>{})
 
     const run = useCallback((promiseOrFn: Promise<D> | (() => Promise<D>), runConfig?: { retry?: (() => Promise<D>) | Promise<D> }) => {
@@ -71,33 +82,33 @@ export const useAsync = <D,>(initialState?: State<D>, initialConfig?: Partial<ty
             };
         });
 
-        setState(prev => ({ ...prev, stat: 'loading' }))
+        safeDispatch({ stat: 'loading' })
 
         return promise
             .then(data => {
                 if (mountedRef.current) {
-                    setState(() => ({
+                    safeDispatch({
                         data,
                         error: null,
                         stat: 'success',
-                    }));
+                    });
                 }
                 return data;
             })
             .catch(error => {
                 if (mountedRef.current) {
-                    setState(() => ({
+                    safeDispatch({
                         data: null,
                         error: error instanceof Error ? error : new Error(String(error)),
                         stat: 'error',
-                    }));
+                    });
                 }
                 if (config.throwOwnError) {
                     return Promise.reject(error);
                 }
                 return error;
             });
-    },[config.throwOwnError,mountedRef])
+    },[config.throwOwnError,safeDispatch])
     
     return{
         isIdle:state.stat==='idle',
@@ -105,8 +116,8 @@ export const useAsync = <D,>(initialState?: State<D>, initialConfig?: Partial<ty
         iserror:state.stat==='error',
         isSuccess:state.stat==='success',
         run,
-        setdata: useCallback((data: D) => setState(() => ({ data, error: null, stat: 'success' })), []),
-        setError: useCallback((error: Error) => setState(() => ({ data: null, error, stat: 'error' })), []),
+        setdata: useCallback((data: D) => safeDispatch({ data, error: null, stat: 'success' }), [safeDispatch]),
+        setError: useCallback((error: Error) => safeDispatch({ data: null, error, stat: 'error' }), [safeDispatch]),
         // retry被调用时，重新跑一遍run
         retry,
         ...state
