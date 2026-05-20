@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import { Pin } from "../../components/pin.tsx";
 import { useEditProject } from "../../utils/project.ts";
 import { ButtonNoPadding } from "../../components/lib.ts";
+import { projectListActions } from "./project-list.slice.tsx";
+import { useDispatch } from "react-redux";
 
  interface ListProps{
     list:Project[];
@@ -25,7 +27,7 @@ export interface Project{
 export const List = (props: ListProps) => {
     const { list, users, loading, refresh } = props;
     const { mutate } = useEditProject();
-
+    const dispatch=useDispatch()
     const pinProject = (id: number) => (pin: boolean) => {
         return mutate({ id, pin }).then(() => {
             if (typeof refresh === 'function') refresh();
@@ -86,7 +88,7 @@ export const List = (props: ListProps) => {
 
                 return (
                     <Dropdown menu={{ items }}>
-                        <ButtonNoPadding type="link">...</ButtonNoPadding>
+                        <ButtonNoPadding type="link" onClick={()=>dispatch(projectListActions.openProjectModal())}>编辑</ButtonNoPadding>
                     </Dropdown>
                 );
             },

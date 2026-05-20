@@ -5,11 +5,13 @@ import { useDebounce, useDocumentTitle, useMount, cleanObject } from '../../util
 import { useHttp } from '../../utils/http.ts';
 import styled from '@emotion/styled';
 import { Button, Spin } from 'antd';
-import { FullPageError, Row } from '../../components/lib';
+import { ButtonNoPadding, FullPageError, Row } from '../../components/lib';
 import { useProjectsSearchParams } from './util.ts';
 import { useProjects } from '../../utils/project.ts';
+import { useDispatch } from 'react-redux';
+import { projectListActions } from './project-list.slice.tsx';
 
-export const ProjectListScreen = (props:{projectButton:React.ReactNode; setProjectModalOpen?:(isOpen:boolean)=>void; setEditingProject?:(p:any)=>void}) => {
+export const ProjectListScreen = () => {
     const [param, setParam] = useProjectsSearchParams();
     const debounceParam = useDebounce(param, 200);
     const [users, setUsers] = useState<any[]>([]);
@@ -19,7 +21,7 @@ export const ProjectListScreen = (props:{projectButton:React.ReactNode; setProje
     const safeList = Array.isArray(list) ? list : [];
     const client = useHttp();
     useDocumentTitle('项目列表',false)
-
+    const dispatch=useDispatch()
     const filteredList = useMemo(() => {
         return safeList.filter((project) => {
             const nameMatch = debounceParam.name
@@ -56,7 +58,10 @@ export const ProjectListScreen = (props:{projectButton:React.ReactNode; setProje
                 <FullPageError error={projectError} />
             ) : null}
             <h1>项目列表</h1>
-            {props.projectButton}
+            <ButtonNoPadding
+            onClick={()=>dispatch(projectListActions.openProjectModal())}
+            type='link'
+            >创建项目</ButtonNoPadding>
             </Row>
             
             <Button
@@ -79,8 +84,6 @@ export const ProjectListScreen = (props:{projectButton:React.ReactNode; setProje
                 </div>
             ) : (
                 <List
-                    setProjectModalOpen={props.setProjectModalOpen}
-                    setEditingProject={props.setEditingProject}
                     refresh={() => {
                         const q = cleanObject(param || {});
                         if ((q as any).name) {
