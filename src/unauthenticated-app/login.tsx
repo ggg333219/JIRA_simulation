@@ -2,9 +2,10 @@ import React from 'react';
 import { useAuth } from '../context/auth-context';
 import { Form, Input, message } from 'antd'
 import { LongButton } from './styles';
+import { useDispatch } from 'react-redux';
 export const LoginScreen = () => {
   const { login } = useAuth()
-
+  const dispatch=useDispatch()
   const handleSubmit = async (values: { username: string; password: string }) => {
     try {
       await login(values);

@@ -1,15 +1,19 @@
-import React, { useState,ReactNode } from 'react'
+import React, { useState,ReactNode, useCallback } from 'react'
 import * as auth from '../auth-provider'
 import { User } from '../screens/project-list/search-pannel'
 import { http } from '../utils/http'
 import { useMount } from '../utils'
 import { useAsync } from '../utils/use-async'
 import { FullPageError, FullPageLoading } from '../components/lib'
-interface AuthForm {
+import * as authStore from '../store/auth.slice'
+import { useDispatch, useSelector } from 'react-redux'
+import type { AppDispatch } from '../store'
+
+export interface AuthForm {
     username: string,
     password: string,
 }
-const bootstrapUser=async()=>{
+export const bootstrapUser=async()=>{
     const token = auth.get()
     if (!token) return null
 
@@ -21,27 +25,17 @@ const bootstrapUser=async()=>{
     }
 }
 // keep context loosely typed to avoid strict TS coupling here
-const AuthContext = React.createContext<{
-    user:User|null,
-    register:(form:AuthForm)=> Promise<void>
-    login:(form:AuthForm)=> Promise<void>
-    logout:()=> Promise<void>
-
-}|undefined>(undefined)
-AuthContext.displayName = 'AuthContext'
 
 
 
 export const AuthProvider = ({ children }:{children:ReactNode}) => {
     const {data:user,error,isLoading,isIdle,iserror,run,setdata:setUser}=useAsync<User|null>()
-    const [bootstrapped, setBootstrapped] = useState(false)
-    const login = async (form: AuthForm) => { setUser(await auth.login(form)) }
-    const register = async (form: AuthForm) => { setUser(await auth.register(form)) }
-    const logout = async () => { await auth.logout(); setUser(null) }
+   
+    const dispatch :(...args:unknown[])=>Promise<User>= useDispatch<AppDispatch>()
 
     useMount(()=>{
         // 在 run 完成（成功或失败）后标记引导完成，避免一直显示加载中
-        run(bootstrapUser()).finally(() => setBootstrapped(true))
+        run(dispatch(authStore.bootstrap()))
     })
     if(isIdle||isLoading){
         return <FullPageLoading/>
@@ -49,14 +43,22 @@ export const AuthProvider = ({ children }:{children:ReactNode}) => {
     if(iserror){
         return <FullPageError error={error}/>
     }
-    return <AuthContext.Provider value={{ user, login, register, logout }}>{bootstrapped ? children : null}</AuthContext.Provider>
+    return children
 }
 
 export const useAuth =() =>{
-    const context=React.useContext(AuthContext)
-    if(!context){
-        throw new Error('不存在')
+    const dispatch :(...args:unknown[])=>Promise<User>= useDispatch<AppDispatch>()
+    const user=useSelector(authStore.selectorUser)
+    const login=useCallback((form:AuthForm)=>dispatch(authStore.login(form)),[dispatch])
+    const register=useCallback((form:AuthForm)=>dispatch(authStore.register(form)),[dispatch])
+    const logout=useCallback(()=>dispatch(authStore.logout()),[dispatch])
+    
+    
 
-    }
-    return context;
+    return {
+        user,
+        login,
+        register,
+        logout
+    };
 }
