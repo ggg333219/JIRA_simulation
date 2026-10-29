@@ -1,0 +1,211 @@
+Starting the development server...
+
+Compiled successfully!
+
+You can now view my-app in the browser.
+
+  Local:            http://localhost:3002
+  On Your Network:  http://172.19.160.1:3002
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Failed to compile.
+
+SyntaxError: C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\src\authenticated-app.tsx: Expected corresponding JSX closing tag for <Header>. (56:16)
+  54 |                     <span>用户</span>
+  55 |
+> 56 |                 </HeaderLeft>
+     |                 ^
+  57 |                 <HeaderRight>
+  58 |                     <Dropdown
+  59 |   menu={{
+ERROR in ./src/authenticated-app.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\src\authenticated-app.tsx: Expected corresponding JSX closing tag for <Header>. (56:16)
+
+  54 |                     <span>用户</span>
+  55 |
+> 56 |                 </HeaderLeft>
+     |                 ^
+  57 |                 <HeaderRight>
+  58 |                     <Dropdown
+  59 |   menu={{
+    at constructor (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4739:16)
+    at TypeScriptParserMixin.jsxParseElement (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4761:17)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4771:19)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9792:39
+    at TypeScriptParserMixin.tryParse (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:6924:20)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9792:18)
+    at C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12443:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12510:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11692:28)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11348:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9803:20)
+    at TypeScriptParserMixin.parseExpressionBase (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10801:23)
+    at C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12438:16)
+    at TypeScriptParserMixin.parseExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10797:17)
+    at TypeScriptParserMixin.parseReturnStatement (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13159:28)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12815:21)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseStatementListItem (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12764:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13333:61)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseBlock (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13314:10)
+    at TypeScriptParserMixin.parseFunctionBody (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12117:24)
+    at TypeScriptParserMixin.parseArrowExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12092:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11704:12)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11348:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11098:23)
+
+webpack compiled with 1 error
+Compiling...
+Failed to compile.
+
+SyntaxError: C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\src\authenticated-app.tsx: Expected corresponding JSX closing tag for <Header>. (56:16)
+  54 |                     <span>用户</span>
+  55 |
+> 56 |                 </HeaderLeft>
+     |                 ^
+  57 |                 <HeaderRight>
+  58 |                     <Dropdown
+  59 |   menu={{
+ERROR in ./src/authenticated-app.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\src\authenticated-app.tsx: Expected corresponding JSX closing tag for <Header>. (56:16)
+
+  54 |                     <span>用户</span>
+  55 |
+> 56 |                 </HeaderLeft>
+     |                 ^
+  57 |                 <HeaderRight>
+  58 |                     <Dropdown
+  59 |   menu={{
+    at constructor (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:365:19)
+    at TypeScriptParserMixin.raise (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:6616:19)
+    at TypeScriptParserMixin.jsxParseElementAt (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4739:16)
+    at TypeScriptParserMixin.jsxParseElement (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4761:17)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4771:19)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9792:39
+    at TypeScriptParserMixin.tryParse (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:6924:20)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9792:18)
+    at C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10817:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12443:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10817:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12510:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11692:28)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11348:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11098:23)
+    at TypeScriptParserMixin.parseUpdate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11083:21)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11063:23)
+    at TypeScriptParserMixin.parseMaybeUnary (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9854:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10916:61)
+    at TypeScriptParserMixin.parseExprOps (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10921:23)
+    at TypeScriptParserMixin.parseMaybeConditional (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10898:23)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10848:21)
+    at TypeScriptParserMixin.parseMaybeAssign (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9803:20)
+    at TypeScriptParserMixin.parseExpressionBase (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10801:23)
+    at C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10797:39
+    at TypeScriptParserMixin.allowInAnd (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12438:16)
+    at TypeScriptParserMixin.parseExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:10797:17)
+    at TypeScriptParserMixin.parseReturnStatement (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13159:28)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12815:21)
+    at TypeScriptParserMixin.parseStatementContent (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:9525:18)
+    at TypeScriptParserMixin.parseStatementLike (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12784:17)
+    at TypeScriptParserMixin.parseStatementListItem (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12764:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13333:61)
+    at TypeScriptParserMixin.parseBlockBody (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13326:10)
+    at TypeScriptParserMixin.parseBlock (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:13314:10)
+    at TypeScriptParserMixin.parseFunctionBody (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12117:24)
+    at TypeScriptParserMixin.parseArrowExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:12092:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11704:12)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11348:23)
+    at TypeScriptParserMixin.parseExprAtom (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:4776:20)
+    at TypeScriptParserMixin.parseExprSubscripts (C:\Users\27968\Desktop\JIRA_simulation-main (1)\JIRA_simulation-main\node_modules\@babel\parser\lib\index.js:11098:23)
+
+webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.

@@ -1,0 +1,9 @@
+{
+  "port": 3001,
+  "host": "localhost",
+  "watch": true,
+  "db":"./__json_server_mock__/db.json",
+  "middlewares": ["./__json_server_mock__/middleware.js"],
+  "_comment": "json-server 配置文件",
+  "id":"id"
+}

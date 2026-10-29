@@ -1,0 +1,10 @@
+html,body,#root{height:100%;}
+body{margin:0;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+
+/* Ensure the App root's immediate child stretches to full height to avoid
+	 emotion-generated wrapper div shrinking (e.g. css-xxxxx). */
+#root > div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}

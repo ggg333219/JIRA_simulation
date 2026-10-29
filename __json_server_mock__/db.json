@@ -1,0 +1,297 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "高修文"
+    },
+    {
+      "id": 2,
+      "name": "熊天成"
+    },
+    {
+      "id": 3,
+      "name": "郑华"
+    },
+    {
+      "id": 4,
+      "name": "王文静"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "示例项目",
+      "personId": 1,
+      "organization": "示例组",
+      "created": 1620000000000,
+      "pin": false
+    },
+    {
+      "id": 2,
+      "name": "团购 APP",
+      "personId": 2,
+      "organization": "团购组",
+      "created": 1604989757139,
+      "pin": true
+    },
+    {
+      "id": 3,
+      "name": "物料管理系统",
+      "personId": 2,
+      "organization": "物料组",
+      "created": 1546300800000,
+      "pin": true
+    },
+    {
+      "id": 4,
+      "name": "总部管理系统",
+      "personId": 3,
+      "organization": "总部",
+      "created": 1604980000011,
+      "pin": true
+    },
+    {
+      "id": 5,
+      "name": "送餐路线规划系统",
+      "personId": 4,
+      "organization": "外卖组",
+      "created": 1546900800000,
+      "pin": true
+    },
+    {
+      "name": "骑手管理1",
+      "organization": "bbb",
+      "personId": 2,
+      "id": 6
+    }
+  ],
+  "epics": [
+    {
+      "name": "高数",
+      "projectId": 1,
+      "id": 1
+    }
+  ],
+  "kanbans": [
+    {
+      "id": 4,
+      "name": "待开始",
+      "projectId": 1
+    },
+    {
+      "id": 5,
+      "name": "进行中",
+      "projectId": 1
+    },
+    {
+      "id": 6,
+      "name": "已完成",
+      "projectId": 1
+    },
+    {
+      "id": 1,
+      "name": "待开始",
+      "projectId": 2
+    },
+    {
+      "id": 2,
+      "name": "进行中",
+      "projectId": 2
+    },
+    {
+      "id": 3,
+      "name": "已完成",
+      "projectId": 2
+    },
+    {
+      "id": 7,
+      "name": "待开始",
+      "projectId": 4
+    },
+    {
+      "id": 8,
+      "name": "进行中",
+      "projectId": 4
+    },
+    {
+      "id": 9,
+      "name": "已完成",
+      "projectId": 4
+    },
+    {
+      "name": "技术难点",
+      "projectId": 4,
+      "id": 10
+    },
+    {
+      "name": "Inbox",
+      "projectId": 4,
+      "id": 11
+    }
+  ],
+  "tasks": [
+    {
+      "id": 5,
+      "name": "示例任务 B",
+      "processorId": 2,
+      "projectId": 1,
+      "epicId": 1,
+      "kanbanId": 5,
+      "typeId": 2,
+      "note": ""
+    },
+    {
+      "id": 6,
+      "name": "示例任务 C",
+      "processorId": 3,
+      "projectId": 1,
+      "epicId": 1,
+      "kanbanId": 6,
+      "typeId": 1,
+      "note": ""
+    },
+    {
+      "id": 1,
+      "name": "搭建登录页",
+      "processorId": 1,
+      "projectId": 2,
+      "epicId": 1,
+      "kanbanId": 1,
+      "typeId": 1,
+      "note": ""
+    },
+    {
+      "id": 2,
+      "name": "实现项目列表",
+      "processorId": 2,
+      "projectId": 2,
+      "epicId": 1,
+      "kanbanId": 2,
+      "typeId": 1,
+      "note": ""
+    },
+    {
+      "id": 3,
+      "name": "修复看板显示",
+      "processorId": 3,
+      "projectId": 2,
+      "epicId": 1,
+      "kanbanId": 3,
+      "typeId": 1,
+      "note": ""
+    },
+    {
+      "id": 7,
+      "name": "管理注册界面开发",
+      "processorId": 1,
+      "projectId": 4,
+      "epicId": 1,
+      "kanbanId": 7,
+      "typeId": 1,
+      "note": ""
+    },
+    {
+      "id": 8,
+      "name": "修复注册表单验证",
+      "processorId": 2,
+      "projectId": 4,
+      "epicId": 1,
+      "kanbanId": 8,
+      "typeId": 2,
+      "note": ""
+    },
+    {
+      "id": 9,
+      "name": "注册流程优化",
+      "processorId": 3,
+      "projectId": 4,
+      "epicId": 1,
+      "kanbanId": 9,
+      "typeId": 1,
+      "note": ""
+    },
+    {
+      "name": "任务管理",
+      "projectId": 4,
+      "kanbanId": 7,
+      "id": 10
+    },
+    {
+      "name": "提交测试",
+      "projectId": 4,
+      "kanbanId": 8,
+      "id": 11
+    },
+    {
+      "name": "aaa",
+      "projectId": 4,
+      "kanbanId": 7,
+      "id": 12
+    },
+    {
+      "name": "bbb",
+      "projectId": 4,
+      "kanbanId": 7,
+      "id": 13
+    },
+    {
+      "name": "ccc",
+      "projectId": 4,
+      "kanbanId": 7,
+      "id": 14
+    },
+    {
+      "name": "aa",
+      "projectId": 4,
+      "kanbanId": 8,
+      "typeId": 1,
+      "id": 15
+    },
+    {
+      "name": "bb",
+      "projectId": 4,
+      "kanbanId": 9,
+      "typeId": 1,
+      "id": 16
+    },
+    {
+      "name": "aaa",
+      "projectId": 2,
+      "kanbanId": 1,
+      "typeId": 1,
+      "id": 17
+    },
+    {
+      "name": "v",
+      "projectId": 2,
+      "kanbanId": 2,
+      "typeId": 1,
+      "id": 18
+    },
+    {
+      "name": "aa",
+      "projectId": 2,
+      "kanbanId": 2,
+      "typeId": 1,
+      "id": 19
+    },
+    {
+      "name": "起床",
+      "projectId": 1,
+      "kanbanId": 4,
+      "typeId": 1,
+      "id": 20,
+      "processorId": 3
+    }
+  ],
+  "taskTypes": [
+    {
+      "id": 1,
+      "name": "task"
+    },
+    {
+      "id": 2,
+      "name": "bug"
+    }
+  ]
+}
